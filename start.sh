@@ -1,3 +1,3 @@
-adb connect 192.168.31.11
-cd pictures/timelapse
+adb connect <IP>
+cd <REPO PATH>
 python3 timelapse.py

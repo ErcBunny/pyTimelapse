@@ -1,4 +1,4 @@
 adb tcpip 5555
-adb connect 192.168.31.11
-cd C:\Users\Yueqian\Pictures\timelapse
+adb connect <IP>
+cd <REPO PATH>
 python timelapse.py
