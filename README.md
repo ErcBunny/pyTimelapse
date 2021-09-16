@@ -6,7 +6,7 @@
 
 * Overview
 
-  <img src="/Users/yueqian/Documents/pyTimelapse/doc/outline.png" alt="outline" style="zoom:50%;" />
+  <img src="./doc/outline.png" alt="outline" style="zoom:50%;" />
 
 ## Installing Dependencies
 
