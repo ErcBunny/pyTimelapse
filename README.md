@@ -6,7 +6,7 @@
 
 * Overview
 
-  <img src="./doc/outline.png" alt="outline" style="zoom:50%;" />
+  <img src="./doc/outline.jpg" alt="outline" style="zoom:50%;" />
 
 ## Installing Dependencies
 
@@ -18,13 +18,13 @@
 
 1. Main function: `python3 timelapse.py`
    * This file is highly mobile-device dependent
-   * Please read through the code and customize it according to your needs before you put it into work 
+   * Please **read through the code and customize it according to your needs** before you put it into work 
      * `OS_is_win`
      * Coordinates of `adb shell input tap`
      * Paths of files
      * ...
-2. Select & copy files: refer to `copyfiles.py`
-   * You may need to configure paths before it can work properly
+2. Select & copy files: `python3 copyfiles.py`
+   * You may need to **configure paths** before it can work properly
 
 ## Auto Startup Scripts
 
