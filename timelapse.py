@@ -19,18 +19,18 @@ def start_camera():
     os.system("adb shell am start -a android.media.action.STILL_IMAGE_CAMERA")
 
 def switch_ultrawide():
-    os.system("adb shell input tap 420 1600")
+    os.system("adb shell input tap 420 1600") # mobile device dependent
 
 def take_a_picture():
     os.system("adb shell input keyevent 27")
 
 def switch_108M():
-    os.system("adb shell input tap 760 1800")
+    os.system("adb shell input tap 760 1800") # mobile device dependent
 
 def return_home():
     os.system("adb shell input keyevent 3")
-    os.system("adb shell input tap 320 2280")
-    os.system("adb shell input tap 530 2000")
+    os.system("adb shell input tap 320 2280") # mobile device dependent
+    os.system("adb shell input tap 530 2000") # mobile device dependent
 
 def power_button():
     os.system("adb shell input keyevent 26")
@@ -40,15 +40,15 @@ def power_control():
 
 def get_pic_name():
     if OS_is_win == True:
-        rawname = os.popen("""adb shell "ls -t /sdcard/DCIM/Camera/ | grep '.jpg' | head -n 1 " """).read()
+        rawname = os.popen("""adb shell "ls -t /sdcard/DCIM/Camera/ | grep '.jpg' | head -n 1 " """).read() # mobile device dependent
         myfilename = rawname[0:-1]
     else
-        myfilename = os.popen("adb shell ls -t /sdcard/DCIM/Camera/ | grep '.jpg' | head -n 1 | tr -d '\n'").read()
+        myfilename = os.popen("adb shell ls -t /sdcard/DCIM/Camera/ | grep '.jpg' | head -n 1 | tr -d '\n'").read() # mobile device dependent
     print(myfilename)
     return myfilename
 
 def save_file(type, filename):
-    os.system("adb pull /sdcard/DCIM/Camera/" + filename + " ./" + type + "/" + filename)
+    os.system("adb pull /sdcard/DCIM/Camera/" + filename + " ./" + type + "/" + filename) # mobile device dependent
     
 
 def capture():
@@ -71,8 +71,8 @@ def capture():
     capture_count += 1
     return_home()
     power_button()
-    save_file("ULTRAWIDE", ultrawide)
-    save_file("108MP", wide108)
+    save_file("ULTRAWIDE", ultrawide) # mobile device dependent
+    save_file("108MP", wide108) # mobile device dependent
     print("action complete")
 
 def update_status():
@@ -90,7 +90,7 @@ def update_status():
 def init():
     Trigger_0 = IntervalTrigger(seconds=1)
     Trigger_1 = IntervalTrigger(seconds=40)
-    Trigger_2 = CronTrigger(hour="4-19", minute="*/15", second="0")
+    Trigger_2 = CronTrigger(hour="4-19", minute="*/15", second="0") # set time trigger here
     scheduler.add_job(update_status, Trigger_0, id="status")
     scheduler.add_job(capture, Trigger_2, id="capture")
     scheduler.start()
