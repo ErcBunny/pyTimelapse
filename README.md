@@ -6,7 +6,27 @@
 
 * Overview
 
-  <img src="./doc/outline.jpg" alt="outline" style="zoom:50%;" />
+  ```mermaid
+  graph LR
+  A(pyTimelapse)
+  	A --> B(Hardware)
+    	B --> C(Fixed Tripod)
+    	B --> D(Water Proof)
+    	B --> E(Power Line)
+   	A --> F(Software)
+   		F --> K(Python Scripts)
+   			K --> L(pyTimelapse: Main Function)
+   			K --> M(copyfiles.py)
+   		F --> N(Robust Utilities)
+   			N --> O(Autostart)
+   			N --> P(Restart Host Computer After Power Failure)
+   		F --> G(Dependencies)
+   			G --> H(ADB)
+   			G --> I(scrcpy)
+   			G --> J(Python Modules)
+  ```
+
+  > Typora graph LR
 
 ## Installing Dependencies
 
@@ -19,12 +39,8 @@
 1. Main function: `python3 timelapse.py`
    * This file is highly mobile-device dependent
    * Please **read through the code and customize it according to your needs** before you put it into work 
-     * `OS_is_win`
-     * Coordinates of `adb shell input tap`
-     * Paths of files
-     * ...
 2. Select & copy files: `python3 copyfiles.py`
-   * You may need to **configure paths** before it can work properly
+   * Again, you may need to **configure paths** before it can work properly
 
 ## Auto Startup Scripts
 

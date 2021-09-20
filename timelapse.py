@@ -13,7 +13,7 @@ capture_count = 0
 paused = False
 start_time = time.time()
 scheduler = BackgroundScheduler()
-OS_is_win = True
+OS_is_win = True # check your OS
 
 def start_camera():
     os.system("adb shell am start -a android.media.action.STILL_IMAGE_CAMERA")
